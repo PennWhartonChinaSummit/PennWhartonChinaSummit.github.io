@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../css/desktop.min.css">
+    <link rel="stylesheet" href="../css/past.css">
+    <link rel="stylesheet" href="../css/mobile.min.css">
+    <link rel="stylesheet" href="../css/past-mobile.css">
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="../assets/favicons/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="../assets/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="../assets/favicons/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../assets/favicons/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="../assets/favicons/favicon-128.png" sizes="128x128" />
+    <!-- External JS -->
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.css' rel='stylesheet' />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108713232-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-108713232-1');
+    </script>
+    <title>PAST | Penn Wharton China Summit</title>
+  </head>
+  <body>
+
+    <!--
+      MARK: Navigation Buttons
+    -->
+    <div class="navigation row windows-hover-ne" id="abs-nav">
+      <!-- <div class="col-4 offset-md-4 right-txt no-padding">
+        <a href="#">
+          <div class="button-box" id="reg">
+            REGISTER
+          </div>
+        </a>
+      </div> -->
+      <div class="col-6 right-txt no-padding">
+        <a href="/past-ch">
+          <div class="option" id="lang">
+            <i class="icofont icofont-globe"></i><br/>
+            <span class="hover-text">中文</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-6 right-txt no-padding">
+        <div class="option" id="nav">
+          <i class="icofont icofont-navigation-menu"></i><br/>
+          <span class="hover-text">Menu</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="navigation windows-hover-ne hide" id="close-nav">
+      <div class="col-6 offset-6 right-txt no-padding">
+        <div id="close">
+          <i class="icofont icofont-close"></i><br/>
+        </div>
+      </div>
+    </div>
+
+    <div class="navigation-mb hide" id="alt-nav">
+
+        <div class="row mobile-hide">
+          <div class="col-7">
+            <a href="/home">
+            <img src="../assets/images/banner.png" height="40px"/>
+            </a>
+          </div>
+          <div class="col-5 right-txt">
+            <div class="right-txt" style="float:right;">
+              <div class="nav-custom-item right-txt">
+                <a href="/past-ch">
+                  <i class="icofont icofont-globe"></i>
+                   简体中文
+                </a>
+              </div>
+              <div class="nav-custom-item right-txt" id="alt-nav-btn">
+                <i class="icofont icofont-navigation-menu"></i>
+                MENU
+              </div>
+              <!-- <div class="nav-custom-item right-txt register-item">
+                <a href="https://whartonchinasummit.ticketleap.com/2019" target="_blank">
+                  REGISTER
+                  <i class="icofont icofont-dotted-right"></i>
+                </a>
+              </div> -->
+            </div>
+          </div>
+        </div>
+
+      <div class="container mobile-only">
+        <div class="row height-100">
+          <div class="col-5 register-item">
+            <!-- <a href="https://whartonchinasummit.ticketleap.com/2019" target="_blank">
+              REGISTER
+              <i class="icofont icofont-dotted-right"></i>
+            </a> -->
+          </div>
+          <div class="col-3 no-padding right-txt">
+            <a href="/past-ch">
+              <i class="icofont icofont-globe"></i>
+              中文
+            </a>
+          </div>
+          <div class="col-4 no-padding center-txt" id="m-alt-nav-btn">
+            <i class="icofont icofont-navigation-menu"></i>
+            Menu
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      MARK:  Navigation Menu
+    -->
+    <div class="fixed-full" id="menu-container">
+      <div class="vertical-center mobile-hide">
+        <div class="row center-txt">
+          <div class="col-12">
+            <a href="https://whartonchinasummit.ticketleap.com/2019" target="_blank"><div class="navigation-action-btn">Register</div></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-12 row menu-items">
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-0"> <a href="/home">Home</a> </div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-3"> <a href="/agenda">Agenda</a> </div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-1"> <a href="/panels">Panels</a> </div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-3"> <a href="/innotalk">Innotalk</a> </div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item  active-item" id="item-3"> <a href="/past" class="active-item">Past Summits</a>  <i class="icofont icofont-dotted-left"></i></div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-4"> <a href="/about">About Us</a> </div>
+          </div>
+        </div>
+        <div class="row center-txt">
+          <div class="col-4 offset-1 col-md-2 offset-md-1 center-txt">
+            <div class="nav-social-item center-txt">
+              <a href="https://www.facebook.com/whartonPWCS" target="_blank">
+                <i class="icofont icofont-social-facebook"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-4 col-md-2 center-txt">
+            <div class="nav-social-item center-txt">
+              <a href="../assets/images/wechat-code.jpeg" target="_blank">
+                <i class="icofont icofont-social-wechat"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-4 offset-2 col-md-2 offset-md-0 center-txt">
+            <div class="nav-social-item center-txt">
+              <a href="https://weibo.com/whartonchinasummit" target="_blank">
+                <i class="icofont icofont-social-weibo"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-4 col-md-2 center-txt">
+            <div class="nav-social-item center-txt">
+              <a href="mailto:official@whartonsummit.org" target="_blank">
+                <i class="icofont icofont-email"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-4 col-md-2 center-txt">
+            <div class="nav-social-item center-txt">
+              <a href="http://www.instagram.com/pwcswhartonchina" target="_blank">
+                <i class="icofont icofont-social-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="verticl-center mobile-only">
+        <div class="row">
+          <div class="col-12 center-txt m-menu-title">
+            MENU
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-12 row menu-items center-txt">
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-0"> <a href="/home">Home</a> </div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-3"> <a href="/agenda">Agenda</a> </div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-1"> <a href="/panels">Panels</a> </div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-3"> <a href="/innotalk">Innotalk</a> </div>
+            <div class="col-10 offset-2 col-md-12 offset-md-0 navigation-item  active-item" id="item-3"> <a href="/past"  class="active-item">Past Summits</a> <i class="icofont icofont-dotted-left"></i> </div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-4"> <a href="/about">About Us</a> </div>
+
+            <!-- <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-6"> <a  href="https://whartonchinasummit.ticketleap.com/2019/" target="_blank">Register</a> </div> -->
+          </div>
+        </div>
+        <div class="row hide" id="m-close-nav">
+          <div class="col-12 center-txt">
+            <div class="m-close-btn verticl-center">
+              <i class="icofont icofont-close"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="section-full header" id="section-0">
+      <div class="left-square"></div>
+      <div class="sub-title">April 10th - 12th<br/>University of Pennsylvania</div>
+      <div class="vertical-sub-title mobile-hide">
+        To Build the Bridge Between Us
+      </div>
+      <div class="vertical-sub-title mobile-only">
+        To Build the Bridge Between Us
+      </div>
+      <div class="page-caption black-shadow">
+         <h1 class="page-caption">PAST <br/> SUMMITS</h1>
+      </div>
+      <div class="bottom-square">
+        <div class="row">
+          <div class="col-10 white-txt crimson-bg ls-1" style="letter-spacing: 3px;">REGISTER</div>
+          <div class="col-2 white-bg action-area">
+            <a href="https://whartonchinasummit.ticketleap.com/2019" target="_blank" class="black-txt"><i class="icofont icofont-dotted-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      MARK: content
+    -->
+
+
+    <div class="white-bg" id="whitebox">
+      <div class="row row-eq-height">
+        <div class="col-lg-4 col-sm-12 col-xs-12">
+          <h2 class="year-title">2019</h2>
+          <h2 class="slogan-title">
+            <span>Paving the Global Road</span>
+        </div>
+        <div class="col-lg-8 col-sm-12 hidden-xs year-desc">
+          <p>2019 is an important year for the development of US-China relationship. We hope to strengthen the communication and facilitate cooperation between top students, professionals and corporations from both countries, and contribute to the long-lasting friendship between the United States and China. The theme for 2019 Penn Wharton China Summit is Paving the Global Road. Amidst disorder, the world order is being reshaped in 2019. Forty years after Chinese economic reforms opened up the country, we have reached a crossroads where history is crucial.</p>
+          <h5>Speaker Highlights</h5>
+          <div class="row row-eq-height">
+            <div class="col-3 speaker-name">Huang Ping</div>
+              <div class="col-9 speaker-title">Consul General of the People’s Republic of China</div>
+            <div class="col-3 speaker-name">Max Baucus</div>
+              <div class="col-9 speaker-title">11th United States Ambassador to China</div>
+            <div class="col-3 speaker-name">Geoffrey Garrett</div>
+              <div class="col-9 speaker-title">Dean of The Wharton School<br/></div>
+            <div class="col-3 speaker-name">Carl June</div>
+              <div class="col-9 speaker-title">Director, Center for Cellular Immunotherapies, Perelman School of Medicine</div>
+            <div class="col-3 speaker-name">Yan Xuetong</div>
+              <div class="col-9 speaker-title">Dean of International Relations at Tsinghua University</div>
+            <div class="col-3 speaker-name">Hans Tung</div>
+              <div class="col-9 speaker-title">Managing Partner, GGV</div>
+            <div class="col-3 speaker-name">Shan Weijian</div>
+              <div class="col-9 speaker-title">Chairman and CEO of PAG Group</div>
+            <div class="col-3 speaker-name">Gao Mei</div>
+              <div class="col-9 speaker-title">Partner of IDG Capital</div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="white-bg" id="whitebox">
+      <div class="row row-eq-height">
+        <div class="col-lg-4 col-sm-12 col-xs-12">
+          <h2 class="year-title">2018</h2>
+          <h2 class="slogan-title">
+            <span>Our Generation</span>
+        </div>
+        <div class="col-lg-8 col-sm-12 hidden-xs year-desc">
+          <p>In the past 40 years of Chinese economic reform,
+            the spirit of innovation has benefited citizens and brought about the prosperity and rejuvenation
+            of the nation. 
+            The transformations brought about by development continue to shock the world,
+            and the dichotomy between the exploitation of the resources and technological innovation is sharp.
+            The increasing popularity of Western entertainment culture corresponds with the decline of traditional
+            Chinese culture. Deleveraging and economic slowdown cannot be ignored,
+            and China is experiencing an unprecedented challenge.
+            Since the entrepreneurial spirit has defined this era,
+            the 2018 Penn Wharton China Summit “Our Generation” invited more than 30 important figures such as Fu Ying, Guo Guangchang, Zhu Baoguo and Cui Tiankai. Guests, leaders, and over 1,500 American and Chinese top students across walks of life discussed the status quo as it relates to social and economic development.</p>
+          <h5>Speaker Highlights</h5>
+          <div class="row row-eq-height">
+            <div class="col-3 speaker-name">Fu Ying </div>
+              <div class="col-9 speaker-title">Former Vice Minister of Foreign Affairs </div>
+            <div class="col-3 speaker-name">Cui Tiankai</div>
+              <div class="col-9 speaker-title">Chinese Ambassador to the United States</div>
+            <div class="col-3 speaker-name">Zhang Qiyue</div>
+              <div class="col-9 speaker-title">Consul General of China in New York<br/></div>
+            <div class="col-3 speaker-name">Kevin Rudd</div>
+              <div class="col-9 speaker-title">The 26th Prime Minister of Australia</div>
+            <div class="col-3 speaker-name">Guo Guangchang </div>
+              <div class="col-9 speaker-title">Chairman of Fosun International</div>
+            <div class="col-3 speaker-name">Zhu Baoguo</div>
+              <div class="col-9 speaker-title">Founder and Chairman of Joincare and Livzon Pharmaceutical Group</div>
+            <div class="col-3 speaker-name">Wang Gehong</div>
+              <div class="col-9 speaker-title">Chief Executive Officer at Weibo Corp</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- MARK: TRACY! -->
+
+    <div class="white-bg" id="whitebox">
+      <div class="row row-eq-height">
+        <div class="col-lg-4 col-sm-12 col-xs-12">
+          <h2 class="year-title">2017</h2>
+          <h2 class="slogan-title">
+            <span>the World to China: </span><br>Challenges in Supply Side Reform<br>
+            <span>China to the World: </span><br>Integration in Globalization Strategy</h2>
+        </div>
+        <div class="col-lg-8 col-sm-12 hidden-xs year-desc">
+          <p>The 2017 Summit aimed to build the
+            United States’ most influential exchange
+            platform for overseas elites by inviting
+            leaders from all walks of life to shed
+            light on the developmental prospects of
+            Chinese enterprises, and to divulge the
+            many opportunities as China found its
+            place on the global track.We invited a number of distinguished guests
+              from all walks of life to converse with elite
+              Chinese and American students at the second
+              Penn Wharton China Summit. These leaders
+              talked about the opportunities in global
+              strategic integration and the challenges
+              brought by the supply-side reform with
+              respect to the seven themes of real estate, healthcare, financial
+              markets, culture and the arts, business reform,
+              science and technology, and education.</p>
+          <h5>Speaker Highlights</h5>
+          <div class="row row-eq-height">
+            <div class="col-3 speaker-name">Zhang Qiyue</div>
+            <div class="col-9 speaker-title"> Consulate General of China in New York<br/></div>
+            <div class="col-3 speaker-name">Pan Shiyi</div>
+            <div class="col-9 speaker-title"> Chairman of Soho China</div>
+            <div class="col-3 speaker-name">Jizhong Zhang</div>
+            <div class="col-9 speaker-title"> Chinese TV Producer</div>
+            <div class="col-3 speaker-name">Zhou Xin</div>
+            <div class="col-9 speaker-title"> Chairman of Ehouse Holdings</div>
+            <div class="col-3 speaker-name">Li Ning</div>
+            <div class="col-9 speaker-title"> Executive Director of Li Ning Co.</div>
+            <div class="col-3 speaker-name">Zhang Yiming</div>
+            <div class="col-9 speaker-title"> CEO of Toutiao</div>
+            <div class="col-3 speaker-name">Tad Smith</div>
+            <div class="col-9 speaker-title"> CEO of Sotheby’s</div>
+            <div class="col-3 speaker-name">Fu Jianzhong</div>
+            <div class="col-9 speaker-title"> Co-founder of Geekhouse Capital</div>
+            <div class="col-3 speaker-name">Wang Qiang</div>
+            <div class="col-9 speaker-title"> Founder of ZhenFund</div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="white-bg" id="whitebox">
+      <div class="row row-eq-height">
+        <div class="col-lg-4 col-sm-12 col-xs-12">
+          <h2 class="year-title">2016</h2>
+          <h2 class="slogan-title">
+            <span>China's New Normal: </span><br>The Next Engine of Growth</h2>
+        </div>
+
+        <div class="col-lg-8 col-sm-12 hidden-xs year-desc">
+          <p>After decades of high-speed growth, China's economy is running out of steam. Traditional drivers including export, infrastructure investment and real estate are losing their momentum. In response, the Chinese Central Bank has slashed interest rates, but the effect is limited by the not-quite-liberalized nature of China’s financial system. The Government is additionally wary of fiscal stimulus because local government debt has grown to dangerous levels. In other words, the old period of high speed growth is over, and China's economy is entering a ‘New Normal’. Going forward, everyone, from government officials to businessmen, academics to investors, is looking for the next driver of growth. Is it innovation and entrepreneurship in tech sector, or a booming entertainment and media industry? Will it be the liberalization in the financial system, or reform in state-owned Enterprises? </p>
+          <h5>Speaker Highlights</h5>
+          <div class="row row-eq-height">
+            <div class="col-3 speaker-name">Lei Jun</div>
+            <div class="col-9 speaker-title">Founder of Xiaomi Technology</div>
+            <div class="col-3 speaker-name">Zhang Jixing</div>
+            <div class="col-9 speaker-title">General Manager of Sinopec USA</div>
+            <div class="col-3 speaker-name">Tan Qiang</div>
+            <div class="col-9 speaker-title">CEO of MetLife China</div>
+            <div class="col-3 speaker-name">Zhou Xin</div>
+            <div class="col-9 speaker-title">Chairman of Ehouse Holdings</div>
+            <div class="col-3 speaker-name">Ding Changfeng</div>
+            <div class="col-9 speaker-title">Director of Vanke Commercial Real Estate</div>
+            <div class="col-3 speaker-name">David Yi Li</div>
+            <div class="col-9 speaker-title">Chairman and CEO of JP Morgan China</div>
+            <div class="col-3 speaker-name">Chen Kaige</div>
+            <div class="col-9 speaker-title">Renowned Chinese Film Director</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="white-bg" id="whitebox">
+
+
+
+      <!-- div class="row">
+        <div class="col-lg-12 col-sm-12 col-xs-12">
+          <h2 id="whycome">PAST SPEAKERS</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="row no-gutters white-bg row-eq-height">
+      <div class="col-lg-6 col-sm-12 col-xs-12">
+        <div id="redbox">
+          <div class="row center-txt">
+            <div class="summit-year">PWCS 2018</div>
+          </div>
+          <div class="row row-eq-height">
+            <div class="col-4 speaker-name">Fu Ying </div>
+            <div class="col-8 speaker-title">Former Vice Minister of Foreign Affairs </div>
+            <div class="col-4 speaker-name">Guo Guangchang </div>
+            <div class="col-8 speaker-title">Chairman of Fosun International </div>
+            <div class="col-4 speaker-name">Zhu Baoguo </div>
+              <div class="col-8 speaker-title">Founder and Chairman of Joincare and Livzon Pharmaceutical Group </div>
+            <div class="col-4 speaker-name">Philipp Rösler</div>
+              <div class="col-8 speaker-title">CEO of Hainan Cihang Charity Foundation</div>
+            <div class="col-4 speaker-name">Wen Zhou</div>
+              <div class="col-8 speaker-title">CEO of 3.1 Phillip Lim</div>
+            <div class="col-4 speaker-name">Cui Tiankai</div>
+              <div class="col-8 speaker-title">Chinese Ambassador to the United States.</div>
+            <div class="col-4 speaker-name">Kevin Rudd</div>
+              <div class="col-8 speaker-title">26th Prime Minister of Australia</div>
+            <div class="col-4 speaker-name">Gaofei Wang</div>
+              <div class="col-8 speaker-title">CEO of Weibo</div>
+            <div class="col-4 speaker-name">Jeff Garzik</div>
+              <div class="col-8 speaker-title">Cofounder and CEO of Bloq</div>
+            <div class="col-4 speaker-name">Ma Weiwei</div>
+              <div class="col-8 speaker-title">Vice Chairman of Miguo Culture</div>
+            <div class="col-4 speaker-name">Ying Shuling</div>
+              <div class="col-8 speaker-title">Founder and CEO of Hero Entertainment Group</div>
+            <div class="col-4 speaker-name">Yang Ming</div>
+              <div class="col-8 speaker-title">Founder and CEO of Mountain Top</div>
+            <div class="col-4 speaker-name">Wang Gehong</div>
+              <div class="col-8 speaker-title">Founder and CEO of China Young Professionals Apartment Management Ltd</div>
+            <div class="col-4 speaker-name">Wang Xi</div>
+              <div class="col-8 speaker-title">Executive Vice President of Yanlord Land Group Ltd</div>
+            <div class="col-4 speaker-name">Adam Presser</div>
+              <div class="col-8 speaker-title">Senior Vice President of Warner Brothers</div>
+            <div class="col-4 speaker-name">Albert Ng</div>
+              <div class="col-8 speaker-title">Chairman and Managing Partner of EY China</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-sm-12 col-xs-12">
+        <div id="blackbox">
+          <div class="row center-txt">
+            <div class="summit-year">PWCS 2017</div>
+          </div>
+          <div class="row row-eq-height">
+            <div class="col-4 speaker-name">Qiyue Zhang</div>
+            <div class="col-8 speaker-title"> Consulate General of China in New York<br/></div>
+            <div class="col-4 speaker-name">Shiyi Pan</div>
+            <div class="col-8 speaker-title"> Chairman of Soho China</div>
+            <div class="col-4 speaker-name">Jizhong Zhang</div>
+            <div class="col-8 speaker-title"> Chinese TV Producer</div>
+            <div class="col-4 speaker-name">Xin Zhou</div>
+            <div class="col-8 speaker-title"> Chairman of Ehouse Holdings</div>
+            <div class="col-4 speaker-name">Ning Li</div>
+            <div class="col-8 speaker-title"> Executive Director of Li Ning Co.</div>
+            <div class="col-4 speaker-name">Yiming Zhang</div>
+            <div class="col-8 speaker-title"> CEO of Toutiao</div>
+            <div class="col-4 speaker-name">Tad Smith</div>
+            <div class="col-8 speaker-title"> CEO of Sotheby’s</div>
+            <div class="col-4 speaker-name">Jianzhong Fu</div>
+            <div class="col-8 speaker-title"> Co-founder of Geekhouse Capital</div>
+            <div class="col-4 speaker-name">Qiang Wang</div>
+            <div class="col-8 speaker-title"> Founder of ZhenFund</div>
+            <div class="col-4 speaker-name">Xu Chen</div>
+            <div class="col-8 speaker-title"> CEO of Bank of China USA</div>
+          </div>
+          <div class="row center-txt">
+            <div class="summit-year"><br>PWCS 2016</div>
+          </div>
+          <div class="row">
+            <div class="col-4 speaker-name">Jun Lei</div>
+            <div class="col-8 speaker-title">Founder of Xiaomi technology</div>
+            <div class="col-4 speaker-name">Jixing Zhang</div>
+            <div class="col-8 speaker-title">General manager of Sinopec USA</div>
+            <div class="col-4 speaker-name">Qiang Tan</div>
+            <div class="col-8 speaker-title">CEO of MetLife China</div>
+            <div class="col-4 speaker-name">Xin Zhou</div>
+            <div class="col-8 speaker-title">Chairman of Ehouse Holdings</div>
+            <div class="col-4 speaker-name">Changfeng Ding</div>
+            <div class="col-8 speaker-title">Director of Vanke commercial real estate</div>
+            <div class="col-4 speaker-name">David Yi Li</div>
+            <div class="col-8 speaker-title">Chairman and CEO of JP Morgan China</div>
+            <div class="col-4 speaker-name">Kaige Chen</div>
+            <div class="col-8 speaker-title">Renowned Chinese Film Director</div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+   
+
+
+    <!--
+      MARK: Page End
+    *******************
+    -->
+
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="../js/global.js"></script>
+    <script src="../js/home.js"></script>
+    <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoidG9teiIsImEiOiJjajJyN3dyenkwMDVqMndzN3Y0cjk0bTRmIn0.FEEGdubneAr17N9f8ZHh5g';
+    var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/dark-v9',
+    center: [-75.1982673, 39.9529105],
+    zoom: 9
+    });
+    $('.carousel').carousel();
+    </script>
+    </body>
+</html>

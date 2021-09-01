@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../css/desktop.min.css">
+    <link rel="stylesheet" href="../css/agenda.css">
+    <link rel="stylesheet" href="../css/mobile.min.css">
+    <link rel="stylesheet" href="../css/agenda-mobile.css">
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="../assets/favicons/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="../assets/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="../assets/favicons/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../assets/favicons/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="../assets/favicons/favicon-128.png" sizes="128x128" />
+    <!-- External JS -->
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.css' rel='stylesheet' />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108713232-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-108713232-1');
+    </script>
+    <title>AGENDA | Penn Wharton China Summit</title>
+  </head>
+  <body>
+
+    <!--
+      MARK: Navigation Buttons
+    -->
+
+    <div class="navigation row windows-hover-ne" id="abs-nav">
+      <!-- <div class="col-4 offset-md-4 right-txt no-padding">
+        <a href="#">
+          <div class="button-box" id="reg">
+            REGISTER
+          </div>
+        </a>
+      </div> -->
+      <div class="col-6 right-txt no-padding">
+        <a href="/agenda-ch">
+          <div class="option" id="lang">
+            <i class="icofont icofont-globe"></i><br/>
+            <span class="hover-text">中文</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-6 right-txt no-padding">
+        <div class="option" id="nav">
+          <i class="icofont icofont-navigation-menu"></i><br/>
+          <span class="hover-text">Menu</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="navigation windows-hover-ne hide" id="close-nav">
+      <div class="col-6 offset-6 right-txt no-padding">
+        <div id="close">
+          <i class="icofont icofont-close"></i><br/>
+        </div>
+      </div>
+    </div>
+
+    <div class="navigation-mb hide" id="alt-nav">
+
+        <div class="row mobile-hide">
+          <div class="col-7">
+            <a href="/home">
+            <img src="../assets/images/banner.png" height="40px"/>
+            </a>
+          </div>
+          <div class="col-5 right-txt">
+            <div class="right-txt" style="float:right;">
+              <div class="nav-custom-item right-txt">
+                <a href="/agenda-ch">
+                  <i class="icofont icofont-globe"></i>
+                   简体中文
+                </a>
+              </div>
+              <div class="nav-custom-item right-txt" id="alt-nav-btn">
+                <i class="icofont icofont-navigation-menu"></i>
+                MENU
+              </div>
+              <!-- <div class="nav-custom-item right-txt register-item">
+                <a href="https://whartonchinasummit.ticketleap.com/2019/" target="_blank">
+                  REGISTER
+                  <i class="icofont icofont-dotted-right"></i>
+                </a>
+              </div> -->
+            </div>
+          </div>
+        </div>
+
+      <div class="container mobile-only">
+        <div class="row height-100">
+          <!-- <div class="col-5 register-item">
+            <a href="https://whartonchinasummit.ticketleap.com/2019/" target="_blank">
+              REGISTER
+              <i class="icofont icofont-dotted-right"></i>
+            </a>
+          </div> -->
+          <div class="col-3 no-padding right-txt">
+            <a href="/agenda-ch">
+              <i class="icofont icofont-globe"></i>
+              中文
+            </a>
+          </div>
+          <div class="col-4 no-padding center-txt" id="m-alt-nav-btn">
+            <i class="icofont icofont-navigation-menu"></i>
+            Menu
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      MARK:  Navigation Menu
+    -->
+    <div class="fixed-full" id="menu-container">
+      <div class="vertical-center mobile-hide">
+        <div class="row center-txt">
+          <div class="col-12">
+            <a href="https://whartonchinasummit.ticketleap.com/2019/" target="_blank"><div class="navigation-action-btn">Register</div></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-12 row menu-items">
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-0"> <a href="/home">Home</a></div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item active-item" id="item-5"> <a class="active-item" href="/agenda">Agenda</a> <i class="icofont icofont-dotted-left"></i> </div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-1"> <a href="/panels">Panels</a> </div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-3"> <a href="/innotalk">Innotalk</a> </div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-3"> <a href="/past">Past Summits</a> </div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-4"> <a href="/about">About Us</a> </div>
+          </div>
+        </div>
+        <div class="row center-txt">
+          <div class="col-4 offset-1 col-md-2 offset-md-1 center-txt">
+            <div class="nav-social-item center-txt">
+              <a href="https://www.facebook.com/whartonPWCS" target="_blank">
+                <i class="icofont icofont-social-facebook"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-4 col-md-2 center-txt">
+            <div class="nav-social-item center-txt">
+              <a href="../assets/images/wechat-code.jpeg" target="_blank">
+                <i class="icofont icofont-social-wechat"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-4 offset-2 col-md-2 offset-md-0 center-txt" target="_blank">
+            <div class="nav-social-item center-txt">
+              <a href="https://weibo.com/whartonchinasummit" target="_blank">
+                <i class="icofont icofont-social-weibo"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-4 col-md-2 center-txt">
+            <div class="nav-social-item center-txt">
+              <a href="mailto:official@whartonsummit.org" target="_blank">
+                <i class="icofont icofont-email"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-4 col-md-2 center-txt">
+            <div class="nav-social-item center-txt">
+              <a href="http://www.instagram.com/pwcswhartonchina" target="_blank">
+                <i class="icofont icofont-social-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="verticl-center mobile-only">
+        <div class="row">
+          <div class="col-12 center-txt m-menu-title">
+            MENU
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-12 row menu-items center-txt">
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-0"> <a href="./home.html">Home</a></div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item active-item" id="item-5"> <a class="active-item" href="/agenda">Agenda</a> <i class="icofont icofont-dotted-left"></i> </div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-1"> <a href="/panels">Panels</a> </div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-3"> <a href="/innotalk">Innotalk</a> </div>
+            <div class="col-10 offset-2 col-md-12 offset-md-0 navigation-item" id="item-3"> <a href="/past">Past Summits</a> </div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-4"> <a href="/about">About Us</a> </div>
+
+            <!-- <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-6"> <a href="https://whartonchinasummit.ticketleap.com/2018pwcs" target="_blank">Register</a> </div> -->
+          </div>
+        </div>
+        <div class="row hide" id="m-close-nav">
+          <div class="col-12 center-txt">
+            <div class="m-close-btn verticl-center">
+              <i class="icofont icofont-close"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--
+      MARK: Header
+      <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-0"> <a href="./home.html">Home</a></div>
+      <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-4"> <a href="./about.html">About</a> </div>
+      <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-1"> <a href="./panels.html">Panels</a> </div>
+      <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-2"> <a href="./panels.html">Speakers</a> </div>
+      <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item active-item" id="item-5"> <a class="active-item" href="./agenda.html">Agenda</a> <i class="icofont icofont-dotted-left"></i> </div>
+      <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-3"> <a href="./past.html">Past</a> </div>
+    -->
+
+    <div class="section-full header" id="section-0">
+      <div class="left-square"></div>
+      <div class="sub-title">Dec 19th - 20th, 2020<br/>Beijing</div>
+      <div class="vertical-sub-title mobile-hide">
+        To Build the Bridge Between Us
+      </div>
+      <div class="vertical-sub-title mobile-only">
+        To Build the Bridge Between Us
+      </div>
+      <div class="black-shadow">
+         <h1 class="page-caption">2019 <br/> AGENDA</h1>
+      </div>
+      <div class="bottom-square">
+        <div class="row">
+          <div class="col-10 white-txt crimson-bg ls-1" style="letter-spacing: 3px;">REGISTER</div>
+          <div class="col-2 white-bg action-area">
+            <a href="https://whartonchinasummit.ticketleap.com/2019/" target="_blank" class="black-txt"><i class="icofont icofont-dotted-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      MARK: content
+    -->
+
+    <div class="section-free">
+      <div class="row mobile-hide">
+        <div class="col-12 col-md-3 center-txt">
+          <h2 class="agenda-date">April 19th</h2>
+        </div>
+        <div class="col-12 col-md-6 center-txt">
+          <h2 class="agenda-date">April 20th</h2>
+        </div>
+        <div class="col-12 col-md-3 center-txt">
+          <h2 class="agenda-date">April 21st</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-3 center-txt">
+          <h2 class="agenda-date mobile-only">April 19th</h2>
+          <div class="agenda-item left-txt">
+            <div class="item-time">
+              1:00PM - 4:00PM
+            </div>
+            <div class="item-title">
+              Registration Open
+            </div>
+            <div class="item-location">
+              Location: Annenberg Center
+            </div>
+            <div class="item-desc">
+              Address: 3680 Walnut St, Philadelphia, PA 19104
+            </div>
+            <!--div class="item-desc">
+              Presentation by representatives from the Summit Board and the Wharton school to media.
+            </div-->
+          </div>
+          <div class="agenda-item left-txt">
+            <div class="item-time">
+              4:00PM - 6:00PM
+            </div>
+            <div class="item-title">
+              Opening Ceremony
+            </div>
+            <div class="item-location">
+              Location: Irvine Auditorium
+            </div>
+            <div class="item-desc">
+               <font color="crimson"> Speakers：Max Baucus, Huang Ping, and Hans Tung. </font>
+            </div>
+            <div class="item-desc">
+               Address: 3401 Spruce St, Philadelphia, PA 19104
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-3 center-txt">
+          <h2 class="agenda-date mobile-only">April 20th</h2>
+          <div class="agenda-item left-txt">
+            <div class="item-time">
+              8:30AM - 10:00AM
+            </div>
+            <div class="item-title">
+              Saturday Registration
+            </div>
+            <div class="item-location">
+              Location: Annenberg Center
+            </div>
+            <div class="item-desc">
+              Address: 3680 Walnut St, Philadelphia, PA 19104
+            </div>
+          </div>
+          <div class="agenda-item left-txt">
+            <div class="item-time">
+              9:00AM - 11:00AM
+            </div>
+            <div class="item-title">
+              Technology Panel
+            </div>
+            <div class="item-location">
+              Location: Annenberg Center, 3680 Walnut St, Philadelphia, PA 19104
+            </div>
+            <!--div class="item-desc">
+              Audience register arrival with staff. Summit brochure, and badge will be distributed.<br/>
+            </div-->
+          </div>
+          <div class="agenda-item left-txt">
+            <div class="item-time">
+              9:00AM - 11:00AM
+            </div>
+            <div class="item-title">
+              HealthCare Panel
+            </div>
+            <div class="item-location">
+              Location: Irvine Auditorium, 3401 Spruce St, Philadelphia, PA 19104
+            </div>
+            <!--div class="item-desc">
+              Welcoming speech will be given by Summit President and Dean of the Wharton School, followed by five keynote speakers.<br/>
+              <span style="font-family: avn-demi, pf-heavy, pf-medium">Speakers:</span><br/>
+              Ying Fu, Guangchang Guo, Shuang Zhang, Mang Su, Philip Rosler<br/>
+            </div-->
+          </div>
+          <div class="agenda-item left-txt">
+            <div class="item-time">
+              11:30AM - 1:00PM
+            </div>
+            <div class="item-title">
+              VIP Lunch with a Selected Group of Speakers
+            </div>
+            <div class="item-location">
+
+            </div>
+            <!--div class="item-desc">
+              In this pivotal moment of transformation, how should the traditional real estate industry adjust smoothly into this new era, and how should companies adapt based on their unique characteristics instead of blindly following the trend?<br/>
+              <span style="font-family: avn-demi, pf-heavy, pf-medium">Speakers:</span><br/>
+              Xin Zhou, Yue Yuan, Xi Wang, Gehong Wang<br/>
+              <span style="font-family: avn-demi, pf-heavy, pf-medium">Host:</span><br/>
+              Kefan Cao<br/>
+            </div-->
+            <!--div class="item-title">
+              Disruptions and Opportunities: Shaping New Investment Landscape in China
+            </div>
+            <div class="item-location">
+              Irvine Auditorium
+            </div>
+            <div class="item-desc">
+              With continuous regulatory changes, constant technological industry disruptions, and rising valuations across major asset classes, how can global investors better navigate the volatile but evolving Chinese market and economy?<br/>
+              <span style="font-family: avn-demi, pf-heavy, pf-medium">Speakers:</span><br/>
+              Albert Ng, Yup Kim, Guang Yang, Xiaodong Wen<br/>
+              <span style="font-family: avn-demi, pf-heavy, pf-medium">Host:</span><br/>
+              Yufei Jiang<br/>
+            </div-->
+          </div>
+          <div class="agenda-item left-txt">
+            <div class="item-time">
+              1:00PM  - 3:00PM
+            </div>
+            <div class="item-title">
+              International Relations Panel
+            </div>
+            <div class="item-location">
+              Location: Irvine Auditorium, 3401 Spruce St, Philadelphia, PA 19104
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-3 center-txt">
+          <div class= "agenda-item left-txt">
+            <div class="item-time">
+              1:00PM  - 3:00PM
+            </div>
+            <div class="item-title">
+              Entertainment Panel
+            </div>
+            <div class="item-location">
+              Location: Annenberg Center, 3680 Walnut St, Philadelphia, PA 19104
+            </div>
+          </div>
+          <div class="agenda-item left-txt">
+            <div class="item-time">
+              2:30PM - 7:00PM
+            </div>
+            <div class="item-title">
+              Career Fair
+            </div>
+            <div class="item-location">
+              Location: Annenberg Center, 3680 Walnut St, Philadelphia, PA 19104
+            </div>
+          </div>
+          <div class="agenda-item left-txt">
+            <div class="item-time">
+              3:00PM - 5:00PM
+            </div>
+            <div class="item-title">
+              Career Fair Show
+            </div>
+            <div class="item-location">
+              Location: Annenberg Center, 3680 Walnut St, Philadelphia, PA 19104
+            </div>
+          </div>
+          <div class="agenda-item left-txt">
+            <div class="item-time">
+              5:00PM - 6:00PM
+            </div>
+            <div class="item-title">
+              China Merchants Bank Info Session
+            </div>
+            <div class="item-location">
+              Location: Annenberg Center, 3680 Walnut St, Philadelphia, PA 19104
+            </div>
+          </div>
+          <div class="agenda-item left-txt">
+            <div class="item-time">
+              6:45PM - 9:45PM
+            </div>
+            <div class="item-title">
+               Inno-Talk Startup Competition
+            </div>
+            <div class="item-location">
+              Location: Irvine Auditorium, 3401 Spruce St, Philadelphia, PA 19104
+            </div>
+            <!--div class="item-desc">
+              Career Fair by participating companies, Audience can deliver resume and exchange contact.
+            </div-->
+          </div>
+          <div class="agenda-item left-txt">
+            <div class="item-time">
+              9:30PM - 12:00PM
+            </div>
+            <div class="item-title">
+              Social Banquet
+            </div>
+            <div class="item-location">
+              Location: Sheraton Hotel, 3549 Chestnut St, Philadelphia, PA
+            </div>
+            <!--div class="item-desc">
+              Conversation between startups, industry leaders and investors<br/>
+              <span style="font-family: avn-demi, pf-heavy, pf-medium">Speakers:</span><br/>
+              Chen Jin，Yue Yuan, Weiwei Ma<br/>
+            </div-->
+          </div>
+        </div>
+        <div class="col-12 col-md-3 center-txt">
+          <h2 class="agenda-date mobile-only">April 21st</h2>
+          <div class="agenda-item left-txt">
+            <div class="item-time">
+              9:00AM - 11:00AM
+            </div>
+            <div class="item-title">
+              Finance Panel
+            </div>
+            <div class="item-location">
+              Location: Irvine Auditorium, 3401 Spruce St, Philadelphia, PA 19104
+            </div>
+            <!--div class="item-desc">
+              What are the thoughts of outstanding entrepreneurs on the status, problems, solutions, and future prospects of sustainable development and social responsibility of Chinese enterprises?<br/>
+              <span style="font-family: avn-demi, pf-heavy, pf-medium">Speakers:</span><br/>
+              Xudong Zhu, Fei Deng, Zhenyao Wang, Jiangxue Pan<br/>
+              <span style="font-family: avn-demi, pf-heavy, pf-medium">Host:</span><br/>
+              Cao Kefan<br/>
+            </div-->
+          </div>
+          <div class="agenda-item left-txt">
+            <div class="item-time">
+              9:00AM - 11:00AM
+            </div>
+            <div class="item-title">
+              Real Estate Panel
+            </div>
+            <div class="item-location">
+              Location: Annerberg Center, 3680 Walnut St, Philadelphia, PA 19104
+            </div>
+            <!--div class="item-desc">
+              Closing remarks will be given by Summit Vice President and Vice Dean of the Wharton School, followed by four keynote speakers.<br/>
+              <span style="font-family: avn-demi, pf-heavy, pf-medium">Speakers:</span><br/>
+              Tiankai Cui, Pete Walker, Zhenyao Wang, Gaofei Wang<br/>
+            </div-->
+          </div>
+          <div class="agenda-item left-txt">
+            <div class="item-time">
+              1:00PM - 3:00PM
+            </div>
+            <div class="item-title">
+              Closing Ceremony
+            </div>
+            <div class="item-desc">
+              <font color="crimson"> Speakers：Bao Yi, Weijian Shan, and H.E. Cho Tae-yul. </font>
+            </div>
+            <div class="item-location">
+              Location: Irvine Auditorium, 3401 Spruce St, Philadelphia, PA 19104
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+   
+
+    <!--
+      MARK: Page End
+    *******************
+    -->
+
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="../js/global.js"></script>
+    <script src="../js/home.js"></script>
+    <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoidG9teiIsImEiOiJjajJyN3dyenkwMDVqMndzN3Y0cjk0bTRmIn0.FEEGdubneAr17N9f8ZHh5g';
+    var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/dark-v9',
+    center: [-75.1982673, 39.9529105],
+    zoom: 9
+    });
+    $('.carousel').carousel();
+    </script>
+  </body>
+</html>

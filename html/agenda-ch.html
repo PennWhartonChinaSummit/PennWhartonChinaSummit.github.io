@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../css/desktop.min.css">
+    <link rel="stylesheet" href="../css/agenda.css">
+    <link rel="stylesheet" href="../css/mobile.min.css">
+    <link rel="stylesheet" href="../css/agenda-mobile.css">
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="../assets/favicons/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="../assets/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="../assets/favicons/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../assets/favicons/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="../assets/favicons/favicon-128.png" sizes="128x128" />
+    <!-- External JS -->
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.css' rel='stylesheet' />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108713232-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-108713232-1');
+    </script>
+    <title>峰会日程 | 宾大沃顿中美峰会</title>
+  </head>
+  <body>
+
+    <!--
+      MARK: Navigation Buttons
+    -->
+
+    <div class="navigation row windows-hover-ne" id="abs-nav">
+      <!-- <div class="col-4 offset-md-4 right-txt no-padding">
+        <a href="#">
+          <div class="button-box" id="reg">
+            REGISTER
+          </div>
+        </a>
+      </div> -->
+      <div class="col-6 right-txt no-padding">
+        <a href="/agenda">
+          <div class="option" id="lang">
+            <i class="icofont icofont-globe"></i><br/>
+            <span class="hover-text">English</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-6 right-txt no-padding">
+        <div class="option" id="nav">
+          <i class="icofont icofont-navigation-menu"></i><br/>
+          <span class="hover-text">菜单</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="navigation windows-hover-ne hide" id="close-nav">
+      <div class="col-6 offset-6 right-txt no-padding">
+        <div id="close">
+          <i class="icofont icofont-close"></i><br/>
+        </div>
+      </div>
+    </div>
+
+    <div class="navigation-mb hide" id="alt-nav">
+
+        <div class="row mobile-hide">
+          <div class="col-7">
+            <a href="/home">
+            <img src="../assets/images/banner.png" height="40px"/>
+            </a>
+          </div>
+          <div class="col-5 right-txt">
+            <div class="right-txt" style="float:right;">
+              <div class="nav-custom-item right-txt">
+                <a href="/agenda">
+                  <i class="icofont icofont-globe"></i>
+                   English
+                </a>
+              </div>
+              <div class="nav-custom-item right-txt" id="alt-nav-btn">
+                <i class="icofont icofont-navigation-menu"></i>
+                 菜单
+              </div>
+              <!-- <div class="nav-custom-item right-txt register-item">
+                <a href="https://whartonchinasummit.ticketleap.com/2019/" target="_blank">
+                  立即订票
+                  <i class="icofont icofont-dotted-right"></i>
+                </a>
+              </div> -->
+            </div>
+          </div>
+        </div>
+
+      <div class="container mobile-only">
+        <div class="row height-100">
+          <div class="col-5 register-item">
+            <!-- <a href="https://whartonchinasummit.ticketleap.com/2019/" target="_blank">
+              立即订票
+              <i class="icofont icofont-dotted-right"></i>
+            </a> -->
+          </div>
+          <div class="col-3 no-padding right-txt">
+            <a href="/agenda">
+              <i class="icofont icofont-globe"></i>
+              English
+            </a>
+          </div>
+          <div class="col-4 no-padding center-txt" id="m-alt-nav-btn">
+            <i class="icofont icofont-navigation-menu"></i>
+            菜单
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      MARK:  Navigation Menu
+    -->
+    <div class="fixed-full" id="menu-container">
+      <div class="vertical-center mobile-hide">
+        <div class="row center-txt">
+          <div class="col-12">
+            <a href="https://whartonchinasummit.ticketleap.com/2019/" target="_blank"><div class="navigation-action-btn">立即订票</div></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-12 row menu-items">
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-0"> <a href="/home-ch">峰会主页</a> </div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item  active-item" id="item-3"> <a href="/agenda-ch" class="active-item">峰会日程</a> <i class="icofont icofont-dotted-left"></i></div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-1"> <a href="/panels-ch">论坛板块</a> </div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-3"> <a href="/innotalk-ch">创业大赛</a> </div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-3"> <a href="/past-ch">往届峰会</a> </div>            
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-4"> <a href="/about-ch">关于我们</a> </div>
+
+          </div>
+        </div>
+        <div class="row center-txt">
+          <div class="col-4 offset-1 col-md-2 offset-md-1 center-txt">
+            <div class="nav-social-item center-txt">
+              <a href="https://www.facebook.com/whartonPWCS" target="_blank">
+                <i class="icofont icofont-social-facebook"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-4 col-md-2 center-txt">
+            <div class="nav-social-item center-txt">
+              <a href="../assets/images/wechat-code.jpeg" target="_blank">
+                <i class="icofont icofont-social-wechat"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-4 offset-2 col-md-2 offset-md-0 center-txt">
+            <div class="nav-social-item center-txt">
+              <a href="https://weibo.com/whartonchinasummit" target="_blank">
+                <i class="icofont icofont-social-weibo"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-4 col-md-2 center-txt">
+            <div class="nav-social-item center-txt">
+              <a href="mailto:official@whartonsummit.org" target="_blank">
+                <i class="icofont icofont-email"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-4 col-md-2 center-txt">
+            <div class="nav-social-item center-txt">
+              <a href="http://www.instagram.com/pwcswhartonchina" target="_blank">
+                <i class="icofont icofont-social-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="verticl-center mobile-only">
+        <div class="row">
+          <div class="col-12 center-txt m-menu-title">
+            菜单
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-12 row menu-items center-txt">
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-0"> <a href="/home-ch">峰会主页</a> </div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item active-item" id="item-3"> <a href="/panels-ch" class="active-item">峰会日程</a> <i class="icofont icofont-dotted-left"></i></div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-1"> <a href="/panels-ch">论坛板块</a> </div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-3"> <a href="/innotalk-ch">创业大赛</a> </div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-3"> <a href="/past-ch">往届峰会</a> </div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-4"> <a href="/about-ch">关于我们</a> </div>
+            <!-- <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-6"> <a href="https://whartonchinasummit.ticketleap.com/2019/" target="_blank">立即订票</a> </div> -->
+          </div>
+        </div>
+        <div class="row hide" id="m-close-nav">
+          <div class="col-12 center-txt">
+            <div class="m-close-btn verticl-center">
+              <i class="icofont icofont-close"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--
+      MARK: Header
+      <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-0"> <a href="./home.html">Home</a></div>
+      <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-4"> <a href="./about.html">About</a> </div>
+      <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-1"> <a href="./panels.html">Panels</a> </div>
+      <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-2"> <a href="./panels.html">Speakers</a> </div>
+      <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item active-item" id="item-5"> <a class="active-item" href="./agenda.html">Agenda</a> <i class="icofont icofont-dotted-left"></i> </div>
+      <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-3"> <a href="./past.html">Past</a> </div>
+    -->
+
+    <div class="section-full header" id="section-0">
+      <div class="left-square"></div>
+      <div class="sub-title">2020年12月19日-20日<br/>北京</div>
+      <div class="vertical-sub-title mobile-hide">
+        让我们一起，构筑中美交流的桥梁
+      </div>
+      <div class="vertical-sub-title mobile-only">
+        让我们一起，构筑中美交流的桥梁
+      </div>
+      <div class="black-shadow">
+         <h1 class="page-caption">2019 <br/> 峰会日程</h1>
+      </div>
+      <div class="bottom-square">
+        <div class="row">
+          <div class="col-10 white-txt crimson-bg ls-1" style="letter-spacing: 3px;">立即订票</div>
+          <div class="col-2 white-bg action-area">
+            <a href="https://whartonchinasummit.ticketleap.com/2019/" target="_blank" class="black-txt"><i class="icofont icofont-dotted-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      MARK: content
+    -->
+
+
+        <div class="section-free">
+          <div class="row mobile-hide">
+            <div class="col-12 col-md-3 center-txt">
+              <h2 class="agenda-date">4月19日</h2>
+            </div>
+            <div class="col-12 col-md-6 center-txt">
+              <h2 class="agenda-date">4月20日</h2>
+            </div>
+            <div class="col-12 col-md-3 center-txt">
+              <h2 class="agenda-date">4月21日</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-3 center-txt">
+              <h2 class="agenda-date mobile-only">4月19日</h2>
+              <div class="agenda-item left-txt">
+                <div class="item-time">
+                  1:00PM - 4:00PM
+                </div>
+                <div class="item-title">
+                  嘉宾及观众注册(常规注册)
+                </div>
+                <div class="item-location">
+                  地点：Annenberg Center
+                </div>
+                <!--div class="item-desc">
+                  Presentation by representatives from the Summit Board and the Wharton school to media.
+                </div-->
+              </div>
+              <div class="agenda-item left-txt">
+                <div class="item-time">
+                  4:00PM - 6:00PM
+                </div>
+                <div class="item-title">
+                  开幕式
+                </div>
+                <div class="item-desc">
+                   <font color="crimson"> Speakers：Max Baucus, Huang Ping, and Hans Tung. </font>
+                </div>
+                <div class="item-desc">
+                  <b>在历史关键的十字路口，听听世界正在发生什么？</b>
+                </div>
+                <div class="item-location">
+                  地点：Irvine Auditorium
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-3 center-txt">
+              <div class="agenda-item left-txt">
+                <div class="item-time">
+                  8:30AM - 10:00PM
+                </div>
+                <div class="item-title">
+                  嘉宾及观众注册(常规注册)
+                </div>
+                <div class="item-location">
+                  地点：Annenberg Center
+                </div>
+              </div>
+              <div class="agenda-item left-txt">
+                <div class="item-time">
+                  9:00AM - 11:00AM
+                </div>
+                <div class="item-title">
+                   科技论坛
+                </div>
+                <div class="item-desc">
+                  <b> 在中美格局的新元年，我们是否会见证一场科技变革？</b>
+                </div>
+                <div class="item-location">
+                  地点：Annenberg Center
+                </div>
+                <!--div class="item-desc">
+                  Audience register arrival with staff. Summit brochure, and badge will be distributed.<br/>
+                </div-->
+              </div>
+              <div class="agenda-item left-txt">
+                <div class="item-time">
+                  9:00AM - 11:00AM
+                </div>
+                <div class="item-title">
+                  医疗板块
+                </div>
+                <div class="item-desc">
+                  <b> 除了相互竞争，中美的医疗保健行业是否存在共享的可能？</b>
+                </div>
+                <div class="item-location">
+                  地点：Irvine Auditorium
+                </div>
+                <!--div class="item-desc">
+                  Welcoming speech will be given by Summit President and Dean of the Wharton School, followed by five keynote speakers.<br/>
+                  <span style="font-family: avn-demi, pf-heavy, pf-medium">Speakers:</span><br/>
+                  Ying Fu, Guangchang Guo, Shuang Zhang, Mang Su, Philip Rosler<br/>
+                </div-->
+              </div>
+              <div class="agenda-item left-txt">
+                <div class="item-time">
+                  11:30AM - 1:00PM
+                </div>
+                <div class="item-title">
+                  嘉宾和VIP观众午餐
+                </div>
+                <div class="item-location">
+
+                </div>
+                <!--div class="item-desc">
+                  In this pivotal moment of transformation, how should the traditional real estate industry adjust smoothly into this new era, and how should companies adapt based on their unique characteristics instead of blindly following the trend?<br/>
+                  <span style="font-family: avn-demi, pf-heavy, pf-medium">Speakers:</span><br/>
+                  Xin Zhou, Yue Yuan, Xi Wang, Gehong Wang<br/>
+                  <span style="font-family: avn-demi, pf-heavy, pf-medium">Host:</span><br/>
+                  Kefan Cao<br/>
+                </div-->
+                <!--div class="item-title">
+                  Disruptions and Opportunities: Shaping New Investment Landscape in China
+                </div>
+                <div class="item-location">
+                  Irvine Auditorium
+                </div>
+                <div class="item-desc">
+                  With continuous regulatory changes, constant technological industry disruptions, and rising valuations across major asset classes, how can global investors better navigate the volatile but evolving Chinese market and economy?<br/>
+                  <span style="font-family: avn-demi, pf-heavy, pf-medium">Speakers:</span><br/>
+                  Albert Ng, Yup Kim, Guang Yang, Xiaodong Wen<br/>
+                  <span style="font-family: avn-demi, pf-heavy, pf-medium">Host:</span><br/>
+                  Yufei Jiang<br/>
+                </div-->
+              </div>
+              <div class="agenda-item left-txt">
+                <div class="item-time">
+                  1:00PM  - 3:00PM
+                </div>
+                <div class="item-title">
+                  国际关系论坛
+                </div>
+                <div class="item-desc">
+                  纷繁复杂的格局中，中美如何形成和而不同、利益共享的模式？
+                </div>
+                <div class="item-location">
+                  地点：Irvine Auditorium
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-3 center-txt">
+              <div class= "agenda-item left-txt">
+                <div class="item-time">
+                  1:00PM  - 3:00PM
+                </div>
+                <div class="item-title">
+                  文娱论坛
+                </div>
+                <div class="item-desc">
+                  影视从业者和网络平台是否能清醒地面对新生观众审美升级？
+                </div>
+                <div class="item-location">
+                  地点：Annenberg Center
+                </div>
+              </div>
+              <div class="agenda-item left-txt">
+                <div class="item-time">
+                  2:30PM - 7:00PM
+                </div>
+                <div class="item-title">
+                 招聘会
+                </div>
+                <div class="item-desc">
+                  现场及线上招聘会：近距离接触各大公司高管，把握住第一轮面试。
+                </div>
+                <div class="item-location">
+                  地点：Annenberg Center
+                </div>
+              </div>
+              <div class="agenda-item left-txt">
+                <div class="item-time">
+                  3:00PM - 5:00PM
+                </div>
+                <div class="item-title">
+                  非你莫属招聘真人秀
+                </div>
+                <div class="item-desc">
+                  五位重磅评委坐镇，优秀的求职者是否在舞台上获得青睐？
+                </div>
+                <div class="item-location">
+                  地点：Annenberg Center
+                </div>
+              </div>
+              <div class="agenda-item left-txt">
+                <div class="item-time">
+                  5:00PM - 6:00PM
+                </div>
+                <div class="item-title">
+                  招商银行宣讲会
+                </div>
+                <div class="item-desc">
+                  招商银行：中国境内最具品牌影响力的商业银行之一
+                </div>
+                <div class="item-location">
+                  地点：Annenberg Center
+                </div>
+              </div>
+              <div class="agenda-item left-txt">
+                <div class="item-time">
+                  6:45PM - 9:45PM
+                </div>
+                <div class="item-title">
+                  创业竞赛论坛 Inno-Talk
+                </div>
+                <div class="item-desc">
+                  八位决赛团队脱颖而出，青年创业家齐聚一堂，二万美金花落谁家？
+                </div>
+                <div class="item-location">
+                  地点：Irvine Auditorium
+                </div>
+                <!--div class="item-desc">
+                  Career Fair by participating companies, Audience can deliver resume and exchange contact.
+                </div-->
+              </div>
+              <div class="agenda-item left-txt">
+                <div class="item-time">
+                  9:30PM - 12:00PM
+                </div>
+                <div class="item-title">
+                  菁英派对
+                </div>
+                <div class="item-desc">
+                  在周末的夜晚，着正装礼服，携同行友人，相聚宴会大厅
+                </div>
+                <div class="item-location">
+                  地点：Sheraton Hotel
+                </div>
+                <!--div class="item-desc">
+                  Conversation between startups, industry leaders and investors<br/>
+                  <span style="font-family: avn-demi, pf-heavy, pf-medium">Speakers:</span><br/>
+                  Chen Jin，Yue Yuan, Weiwei Ma<br/>
+                </div-->
+              </div>
+            </div>
+            <div class="col-12 col-md-3 center-txt">
+              <h2 class="agenda-date mobile-only">April 21st</h2>
+              <div class="agenda-item left-txt">
+                <div class="item-time">
+                  9:00AM - 11:00AM
+                </div>
+                <div class="item-title">
+                  财经论坛
+                </div>
+                <div class="item-desc">
+                  在野蛮生长后，中国将如何建立更完整的金融市场？
+                </div>
+                <div class="item-location">
+                  地点：Irvine Auditorium
+                </div>
+                <!--div class="item-desc">
+                  What are the thoughts of outstanding entrepreneurs on the status, problems, solutions, and future prospects of sustainable development and social responsibility of Chinese enterprises?<br/>
+                  <span style="font-family: avn-demi, pf-heavy, pf-medium">Speakers:</span><br/>
+                  Xudong Zhu, Fei Deng, Zhenyao Wang, Jiangxue Pan<br/>
+                  <span style="font-family: avn-demi, pf-heavy, pf-medium">Host:</span><br/>
+                  Cao Kefan<br/>
+                </div-->
+              </div>
+              <div class="agenda-item left-txt">
+                <div class="item-time">
+                  9:00AM - 11:00AM
+                </div>
+                <div class="item-title">
+                  房地产论坛
+                </div>
+                <div class="item-desc">
+                  紧张的地产新格局中，购房者和地产商应该如何做出相应的调整？
+                </div>
+                <div class="item-location">
+                  地点：Annenberg Center
+                </div>
+                <!--div class="item-desc">
+                  Closing remarks will be given by Summit Vice President and Vice Dean of the Wharton School, followed by four keynote speakers.<br/>
+                  <span style="font-family: avn-demi, pf-heavy, pf-medium">Speakers:</span><br/>
+                  Tiankai Cui, Pete Walker, Zhenyao Wang, Gaofei Wang<br/>
+                </div-->
+              </div>
+              <div class="agenda-item left-txt">
+                <div class="item-time">
+                  1:00PM - 3:00PM
+                </div>
+                <div class="item-title">
+                  闭幕式
+                </div>
+                <div class="item-desc">
+                  放眼世界，聆听时代的传奇，2019沃顿中美峰会圆满落幕。
+                </div>
+                <div class="item-location">
+                  地点：Irvine Auditorium
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+    
+
+    <!--
+      MARK: Page End
+    *******************
+    -->
+
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="../js/global.js"></script>
+    <script src="../js/home.js"></script>
+    <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoidG9teiIsImEiOiJjajJyN3dyenkwMDVqMndzN3Y0cjk0bTRmIn0.FEEGdubneAr17N9f8ZHh5g';
+    var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/dark-v9',
+    center: [-75.1982673, 39.9529105],
+    zoom: 9
+    });
+    $('.carousel').carousel();
+    </script>
+  </body>
+</html>

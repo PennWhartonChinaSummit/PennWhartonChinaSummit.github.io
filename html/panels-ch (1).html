@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../css/desktop.min.css">
+    <link rel="stylesheet" href="../css/panels.css">
+    <link rel="stylesheet" href="../css/mobile.min.css">
+    <link rel="stylesheet" href="../css/panels-mobile.css">
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="../assets/favicons/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="../assets/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="../assets/favicons/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../assets/favicons/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="../assets/favicons/favicon-128.png" sizes="128x128" />
+    <!-- External JS -->
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.css' rel='stylesheet' />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108713232-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-108713232-1');
+    </script>
+    <title>论坛版块 | 宾大沃顿中美峰会</title>
+  </head>
+  <body>
+
+    <!--
+      MARK: Navigation Buttons
+    -->
+
+    <div class="navigation row windows-hover-ne" id="abs-nav">
+      <!-- <div class="col-4 offset-md-4 right-txt no-padding">
+        <a href="#">
+          <div class="button-box" id="reg">
+            REGISTER
+          </div>
+        </a>
+      </div> -->
+      <div class="col-6 right-txt no-padding">
+        <a href="/panels">
+          <div class="option" id="lang">
+            <i class="icofont icofont-globe"></i><br/>
+            <span class="hover-text">English</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-6 right-txt no-padding">
+        <div class="option" id="nav">
+          <i class="icofont icofont-navigation-menu"></i><br/>
+          <span class="hover-text">菜单</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="navigation windows-hover-ne hide" id="close-nav">
+      <div class="col-6 offset-6 right-txt no-padding">
+        <div id="close">
+          <i class="icofont icofont-close"></i><br/>
+        </div>
+      </div>
+    </div>
+
+    <div class="navigation-mb hide" id="alt-nav">
+
+        <div class="row mobile-hide">
+          <div class="col-7">
+            <a href="/home">
+            <img src="../assets/images/banner.png" height="40px"/>
+            </a>
+          </div>
+          <div class="col-5 right-txt">
+            <div class="right-txt" style="float:right;">
+              <div class="nav-custom-item right-txt">
+                <a href="/panels">
+                  <i class="icofont icofont-globe"></i>
+                   English
+                </a>
+              </div>
+              <div class="nav-custom-item right-txt" id="alt-nav-btn">
+                <i class="icofont icofont-navigation-menu"></i>
+                菜单
+              </div>
+              <!-- <div class="nav-custom-item right-txt register-item">
+                <a href="https://whartonchinasummit.ticketleap.com/2019/" target="_blank" >
+                  立即订票
+                  <i class="icofont icofont-dotted-right"></i>
+                </a>
+              </div> -->
+            </div>
+          </div>
+        </div>
+
+      <div class="container mobile-only">
+        <div class="row height-100">
+          <div class="col-5 register-item">
+            <!-- <a href="https://whartonchinasummit.ticketleap.com/2019/" target="_blank">
+              立即订票
+              <i class="icofont icofont-dotted-right"></i>
+            </a> -->
+          </div>
+          <div class="col-3 no-padding right-txt">
+            <a href="/panels">
+              <i class="icofont icofont-globe"></i>
+              English
+            </a>
+          </div>
+          <div class="col-4 no-padding center-txt" id="m-alt-nav-btn">
+            <i class="icofont icofont-navigation-menu"></i>
+            菜单
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      MARK:  Navigation Menu
+    -->
+    <div class="fixed-full" id="menu-container">
+      <div class="vertical-center mobile-hide">
+        <div class="row center-txt">
+          <div class="col-12">
+            <a href="https://whartonchinasummit.ticketleap.com/2019/" target="_blank"><div class="navigation-action-btn">立即订票</div></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-12 row menu-items">
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-0"> <a href="/home-ch">峰会主页</a> </div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-3"> <a href="/agenda-ch">峰会日程</a> </div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item  active-item" id="item-3"> <a href="/past-ch.html" class="active-item">论坛板块</a>  <i class="icofont icofont-dotted-left"></i></div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-3"> <a href="/innotalk-ch">创业大赛</a> </div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-1"> <a href="/past-ch">往届峰会</a> </div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-4"> <a href="/about-ch">关于我们</a> </div>
+
+          </div>
+        </div>
+        <div class="row center-txt">
+          <div class="col-4 offset-1 col-md-2 offset-md-1 center-txt">
+            <div class="nav-social-item center-txt">
+              <a href="https://www.facebook.com/whartonPWCS" target="_blank">
+                <i class="icofont icofont-social-facebook"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-4 col-md-2 center-txt">
+            <div class="nav-social-item center-txt">
+              <a href="../assets/images/wechat-code.jpeg" target="_blank">
+                <i class="icofont icofont-social-wechat"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-4 offset-2 col-md-2 offset-md-0 center-txt">
+            <div class="nav-social-item center-txt">
+              <a href="https://weibo.com/whartonchinasummit" target="_blank">
+                <i class="icofont icofont-social-weibo"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-4 col-md-2 center-txt">
+            <div class="nav-social-item center-txt">
+              <a href="mailto:official@whartonsummit.org" target="_blank">
+                <i class="icofont icofont-email"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-4 col-md-2 center-txt">
+            <div class="nav-social-item center-txt">
+              <a href="http://www.instagram.com/pwcswhartonchina" target="_blank">
+                <i class="icofont icofont-social-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="verticl-center mobile-only">
+        <div class="row">
+          <div class="col-12 center-txt m-menu-title">
+            菜单
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-12 row menu-items center-txt">
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-0"> <a href="/home-ch">峰会主页</a> </div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-3"> <a href="/agenda-ch">峰会日程</a> </div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item  active-item" id="item-1"> <a href="/panels-ch"  class="active-item">论坛板块</a><i class="icofont icofont-dotted-left"></i>  </div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-3"> <a href="/innotalk-ch">创业大赛</a> </div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-3"> <a href="/past-ch">往届峰会</a> </div>
+            <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-4"> <a href="/about-ch">关于我们</a> </div>
+            
+            <!-- <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-6"> <a href="https://whartonchinasummit.ticketleap.com/2019/" target="_blank">立即订票</a> </div> -->
+          </div>
+        </div>
+        <div class="row hide" id="m-close-nav">
+          <div class="col-12 center-txt">
+            <div class="m-close-btn verticl-center">
+              <i class="icofont icofont-close"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--
+      MARK: Header
+
+      <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-0"> <a href="./home.html">Home</a> </div>
+      <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-4"> <a href="./about.html">About</a> </div>
+      <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item active-item" id="item-1"> <a class="active-item" href="./panels.html">Panels</a> <i class="icofont icofont-dotted-left"></i> </div>
+      <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-2"> <a href="./panels.html">Speakers</a> </div>
+      <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-3"> <a href="./agenda.html">Agenda</a> </div>
+      <div class="col-8 offset-2 col-md-12 offset-md-0 navigation-item" id="item-3"> <a href="./past.html">Past</a> </div>
+    -->
+
+    <div class="section-full header" id="section-0">
+      <div class="left-square"></div>
+      <div class="sub-title">四月10日-12日<br/>宾夕法尼亚大学</div>
+      <div class="vertical-sub-title mobile-hide">
+        让我们一起构筑中美交流的桥梁
+      </div>
+      <div class="vertical-sub-title mobile-only">
+        构筑中美交流的桥梁
+      </div>
+      <h1 class="page-caption black-shadow">
+         2019 <br/> 分论坛
+      </h1>
+      <div class="bottom-square">
+        <div class="row">
+          <div class="col-10 white-txt crimson-bg ls-1" style="letter-spacing: 3px;">立即订票</div>
+          <div class="col-2 white-bg action-area">
+            <a href="https://whartonchinasummit.ticketleap.com/2019/" target="_blank" class="black-txt"><i class="icofont icofont-dotted-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      TODO: NEW SECTIONS HERE
+    -->
+    <div class="container">
+      <div class="row panel-nav">
+        <div class="col-12 col-sm-6 col-md-2 center-txt">
+          <a href="#first-panel">财经</a>
+        </div>
+        <div class="col-12 col-sm-6 col-md-2 center-txt">
+          <a href="#second-panel">房地产</a>
+        </div>
+        <div class="col-12 col-sm-6 col-md-2 center-txt">
+          <a href="#third-panel">医疗</a>
+        </div>
+        <div class="col-12 col-sm-6 col-md-2 center-txt">
+          <a href="#fourth-panel">娱乐</a>
+        </div>
+        <div class="col-12 col-sm-6 col-md-2 center-txt">
+          <a href="#fifth-panel">科技</a>
+        </div>
+        <div class="col-12 col-sm-6 col-md-2 center-txt">
+          <a href="#sixth-panel">国际关系</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Speakers main section -->
+    <div class="main-section">
+      <div class="container">
+
+        <!-- 1.Finance -->
+        <div class="row">
+          <div class="col panel-title center-txt">
+            财经板块
+          </div>
+        </div>
+        <div class="row panel-row" id="first-panel">
+          <div class="col-12 col-md-6">
+            <div class="row">
+              <div class="col speakers-header">
+                板块介绍
+              </div>
+            </div>
+            <div class="row panel-desc">
+              <div class="col">
+                <p>
+                  近年来，随着中国经济政治实力的增长，中美之间的地缘政治前景正在迅速转变。
+                  当民粹主义和贸易保护主义在各国卷土重来，中国作为贸易国家，将何去何从？
+                  改革开放三十年来，中国经济经历了从落后到世界领先的腾飞。
+                  而在野蛮生长之后，中国将如何进一步推进经济改革，建立更完善的金融市场并完成消费水平的进一步升级？
+                  中国股市在经历了2015年的爆发式增长和后续连续稳定的阶段性回落后，应当如何调整从而避免这一这种情况的再次发生？
+                  中国金融这一年轻的系统将如何建立，监管并发展从而与国际接轨？中国金融，是机遇还是挑战。
+                </p>
+                <p class="time-location"> <i class="icofont icofont-location-pin"></i> &nbsp;  Irvine Auditorium</p>
+                <p class="time-location"> <i class="icofont icofont-calendar"></i> &nbsp; 4月21日, 9:00am - 11:00am</p>
+                <p class="time-location"><i class="icofont icofont-globe"></i> &nbsp; 语言: 英文</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="row">
+              <div class="col">
+                <div class="speakers-header">
+                  嘉宾
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6 center-txt speaker-item">
+                <img class="speaker-img"  src="../assets/images2019/Bao_Wei.jpg"/>
+                <div class="speaker-name">鲍毅</div>
+                <div class="speaker-title">沄柏资本创始主席</div>
+              </div>
+              <div class="col-6 center-txt speaker-item">
+                <img class="speaker-img"  src="../assets/images2019/Mitchell_Dong.png"/>
+                <div class="speaker-name">Mitchell Dong</div>
+                <div class="speaker-title">Pythagoras Inv董事总经理</div>
+              </div>
+              <div class="col-6 center-txt speaker-item">
+                <img class="speaker-img"  src="../assets/images2019/Chen_Hao.jpg"/>
+                <div class="speaker-name">陈浩</div>
+                <div class="speaker-title">中证信用首席数据官、中证征信（深圳）有限公司首席运营官</div>
+              </div>
+              <div class="col-6 center-txt speaker-item">
+                <img class="speaker-img"  src="../assets/images2019/Wang_Jingyuan.jpeg"/>
+                <div class="speaker-name">王静远</div>
+                <div class="speaker-title">牛犊资本创始合伙人兼CEO</div>
+              </div>
+              <div class="col-6 center-txt speaker-item">
+                <img class="speaker-img"  src="../assets/images2019/Gao_Mei.jpg"/>
+                <div class="speaker-name">高梅</div>
+                <div class="speaker-title">IDG Capital合伙人</div>
+              </div>
+              <div class="col-6 center-txt speaker-item">
+                <img class="speaker-img"  src="../assets/images2019/Andy_Wu.png"/>
+                <div class="speaker-name">Andy Wu</div>
+                <div class="speaker-title">主持人<br>哈佛商学院年轻教授</div>
+              </div>
+            </div>
+            <!--div class="row">
+              <div class="col">
+                <div class="speakers-header">
+                  Host
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6 center-txt speaker-item">
+                <img class="speaker-img" src="../assets/images/Yufei_Jiang.jpg"/ speaker-name="YufeiJiang">
+                <div class="speaker-name">Yufei Jiang</div>
+                <div class="speaker-title">Financial Commentator of CBN</div>
+              </div>
+              < <div class="col-12 center-txt">
+                <img src="../assets/images/speakers-tba.jpg" style="width:100%; max-height: 100%;"/>
+              </div> >
+            </div-->
+          </div>
+        </div>
+
+        <!-- 2. Real Estate -->
+        <div class="row">
+          <div class="col panel-title center-txt">
+            房地产板块
+          </div>
+        </div>
+        <div class="row panel-row" id="second-panel">
+          <div class="col-12 col-md-6">
+            <div class="row">
+              <div class="col speakers-header">
+                嘉宾
+              </div>
+            </div>
+            <div class="row">
+
+              <div class="col-6 center-txt speaker-item">
+                <img class="speaker-img"  src="../assets/images2019/Li-Kaiyan.png"/>
+                <div class="speaker-name">李凯彦</div>
+                <div class="speaker-title">万科集团美国常务董事</div>
+              </div>
+              <div class="col-6 center-txt speaker-item">
+                <img class="speaker-img"  src="../assets/images2019/Jackey_He.jpg"/>
+                <div class="speaker-name">何源流</div>
+                <div class="speaker-title">DMG Investments创始人及CEO</div>
+              </div>
+              <div class="col-6 center-txt speaker-item">
+                <img class="speaker-img"  src="../assets/images2019/Wang_Xi.jpg"/>
+                <div class="speaker-name">王晞</div>
+                <div class="speaker-title">新加坡仁恒置地执行副总裁</div>
+              </div>
+
+              <div class="col-6 center-txt speaker-item">
+                <img class="speaker-img"  src="../assets/images2019/Jonathan_Chan.jpg"/>
+                <div class="speaker-name">Jonathan Chang</div>
+                <div class="speaker-title">知名房地产开放商</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="row">
+              <div class="col">
+                <div class="speakers-header">
+                  板块介绍
+                </div>
+              </div>
+            </div>
+            <div class="row panel-desc">
+              <div class="col">
+                <p>
+                  随着中国经济日益成熟，房地产行业逐渐从龙头地位消退。数十年中，房价的持续增高导
+                  致了政府出台一系列条例法规去预防房地产泡沫的冲击。这为投资者和房地厂商形成了巨
+                  大的屏障，并转入微小的边缘市场来增加利润。近期，中美贸易战不确定性的冲击导致更
+                  多的投资方减缓对房地产行业的进一步投资。政府出台政策鼓励房贷与租赁协议更是使得
+                  地产商重资产项目的现金流得不到迅速回轮。在这个中美关系的紧张大环境下，购房者和
+                  地产商如何做出相应的调整去适应房地产新格局？
+                </p>
+                <p class="time-location"> <i class="icofont icofont-location-pin"></i> &nbsp; Annenberg Center</p>
+                <p class="time-location"> <i class="icofont icofont-calendar"></i> &nbsp; 4月21日, 9:00am - 11:00am</p>
+                <p class="time-location"><i class="icofont icofont-globe"></i> &nbsp; 语言: 中文</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Healthcare -->
+        <div class="row">
+          <div class="col panel-title center-txt">
+            医疗板块
+          </div>
+        </div>
+        <div class="row panel-row" id="third-panel">
+          <div class="col-12 col-md-6">
+            <div class="row">
+              <div class="col speakers-header">
+                板块介绍
+              </div>
+            </div>
+            <div class="row panel-desc">
+              <div class="col">
+                <p>
+                  近年来，全球各个国家的的医疗保健行业都很大程度地受到技术发展与科技进步的影响。
+                  美国的医疗保健行业虽然大部分都是由私有化的民营企业在运营，
+                  但一直受到政府严格的管理与约束，而中国却是由国有的医疗保健系统为全世界最大的客户群提供公共健康服务，
+                  服务着约十四亿人。在中美两国这种运行体制和管理规则的巨大差异情况下，
+                  两国人民将受到怎样的影响？除了相互竞争，中美之间在医疗保健业是否还存在着分享与合作的可能？
+                  投资者应如何看待并选择这些掌握着顶尖技术的医保企业？
+                </p>
+                <p class="time-location"> <i class="icofont icofont-location-pin"></i> &nbsp; Irvine Auditorium</p>
+                <p class="time-location"> <i class="icofont icofont-calendar"></i> &nbsp; 4月20日, 9:00am - 11:00am</p>
+                <p class="time-location"><i class="icofont icofont-globe"></i> &nbsp; 语言: 英语</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="row">
+              <div class="col">
+                <div class="speakers-header">
+                  嘉宾
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6 center-txt speaker-item">
+                <img class="speaker-img buttonImg"   src="../assets/images2019/Carl_June.jpg"/>
+                <div class="speaker-name">Dr. Carl June</div>
+                <div class="speaker-title">细胞治疗教父, 时代杂志2018年全球最具影响力的100人<br>Abramson家族癌症研究所转化医学中心主任</div>
+              </div>
+              <div class="col-6 center-txt speaker-item">
+                <img class="speaker-img buttonImg"  src="../assets/images2019/Chen_Lieping.png"/ speaker-name="ChenLieping"/>
+                <div class="speaker-name">陈列平</div>
+                <div class="speaker-title" style="font:40px">耶鲁癌症中心癌症免疫学项目联合主任</div>
+              </div>
+              <div class="col-6 center-txt speaker-item">
+                <img class="speaker-img buttonImg"  src="../assets/images2019/Cliff_Hudis.png" speaker-name="CliffHudis"/>
+                <div class="speaker-name">Dr. Cliff Hudis</div>
+                <div class="speaker-title">美国临床肿瘤学会CEO</div>
+              </div>
+              <div class="col-6 center-txt speaker-item">
+                <img class="speaker-img"  src="../assets/images2019/Kevin_Xie.jpg"/>
+                <div class="speaker-name">谢懿立</div>
+                <div class="speaker-title">复星医疗控股有限公司总裁、美国首席代表</div>
+              </div>
+
+              <div class="col-6 center-txt speaker-item">
+                <img class="speaker-img"  src="../assets/images2019/Jimmy_Zhang.jpg"/>
+                <div class="speaker-name">张志民</div>
+                <div class="speaker-title">BioVenator首席执行官<br>前强生创新副总裁</div>
+              </div>
+              <div class="col-6 center-txt speaker-item">
+                <img class="speaker-img"  src="../assets/images2019/Xu_Qilin.png"/>
+                <div class="speaker-name">徐琦璘</div>
+                <div class="speaker-title">主持人</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Entertainment -->
+        <div class="row">
+          <div class="col panel-title center-txt">
+            娱乐板块
+          </div>
+        </div>
+        <div class="row panel-row" id="fourth-panel">
+          <div class="col-12 col-md-6">
+            <div class="row">
+              <div class="col speakers-header">
+                嘉宾
+              </div>
+            </div>
+            <div class="row">
+              <div class="row">
+                <div class="col-6 center-txt speaker-item">
+                  <img class="speaker-img"  src="../assets/images2019/Ouyang_Nana.jpg"/>
+                  <div class="speaker-name">欧阳娜娜</div>
+                  <div class="speaker-title">华语影视女演员、大提琴演奏家</div>
+                </div>
+                <div class="col-6 center-txt speaker-item">
+                  <img class="speaker-img"  src="../assets/images2019/Xu_Jiao.png"/>
+                  <div class="speaker-name">徐娇</div>
+                  <div class="speaker-title">中国内地女演员</div>
+                </div>
+                <div class="col-6 center-txt speaker-item">
+                  <img class="speaker-img"  src="../assets/images2019/Su_Mang.png"/>
+                  <div class="speaker-name">苏芒</div>
+                  <div class="speaker-title">前时尚集团总裁、前《时尚芭莎》总编辑</div>
+                </div>
+                <div class="col-6 center-txt speaker-item">
+                  <img class="speaker-img"  src="../assets/images2019/huonifang.jpg"/>
+                  <div class="speaker-name">霍泥芳</div>
+                  <div class="speaker-title">Papitube COO, “papi酱”视频内容创始团队成员</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-sm-12">
+            <div class="row">
+              <div class="col">
+                <div class="speakers-header">
+                  板块介绍
+                </div>
+              </div>
+            </div>
+            <div class="row panel-desc">
+              <div class="col">
+                <p>
+                  随着以IP为核心的快速发展，中国的泛娱乐产业已由单体竞争转向了生态性竞争，
+                  产业生态日趋成熟，年度总值高达5484亿元。
+                  在宏观环境的改革下，娱乐行业在外部环境的冲击下面临挑战，但改革却能在行业的长期发展中带来机遇与红利。
+                  如在2018年备受关注的影视行业，大型影视公司是否能及时适应新的税务环境？
+                  专业的影视从业者是否能更清醒的面对新生观众审美升级的严峻局面？
+                  引领行业的数字网络平台是否能做出类型多元化的题材探索？这些都是在中国娱乐新格局中的重要挑战与机遇。
+                </p>
+                <p class="time-location"> <i class="icofont icofont-location-pin"></i> &nbsp; Annenberg Center</p>
+                <p class="time-location"> <i class="icofont icofont-calendar"></i> &nbsp; 4月20日, 1:00pm - 3:00pm</p>
+                <p class="time-location"><i class="icofont icofont-globe"></i> &nbsp; 语言: 中文</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Technology -->
+
+        <div class="row">
+          <div class="col panel-title center-txt">
+            科技板块
+          </div>
+        </div>
+        <div class="row panel-row" id="fifth-panel">
+          <div class="col-12 col-md-6">
+            <div class="row">
+              <div class="col speakers-header">
+                板块介绍
+              </div>
+            </div>
+            <div class="row panel-desc">
+              <div class="col">
+                 <p>
+                   如今，人工智能技术开始在多个领域落地生根，包括金融、汽车、医疗、零售、传媒、高端制造、安防等产业。
+                   中美AI发展各具优势，中国海量的数据可让AI算法更精准，包容的市场环境和有竞争力的创业者进入这个领域，使之快速迭代；
+                   美国则在基础科研和高深应用上更甚一筹。两大超级AI大国将在未来如何博弈？
+                   面临市场新的机遇和挑战，中美企业家应该如何应对？面对百万亿市场前景，嗅觉明锐的投资者又将怎样布局人工智能领域？
+                   在中美新格局的新元年，我们是否会见证一场全新的AI+变革？
+                 </p>
+                <p class="time-location"> <i class="icofont icofont-location-pin"></i> &nbsp; Annenberg Center</p>
+                <p class="time-location"> <i class="icofont icofont-calendar"></i> &nbsp; 4月20日, 9:00am - 11:00am</p>
+                <p class="time-location"><i class="icofont icofont-globe"></i> &nbsp; 语言: 中文</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="row">
+              <div class="col">
+                <div class="speakers-header">
+                  嘉宾
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6 center-txt speaker-item">
+                <img class="speaker-img"  src="../assets/images2019/Jiang_Changjian.png"/>
+                <div class="speaker-name">蒋昌建</div>
+                <div class="speaker-title">《最强大脑》主持人<br>《智造将来》主持人<br>耶鲁大学政治学博士后</div>
+              </div>
+                <div class="col-6 center-txt speaker-item">
+                  <img class="speaker-img"  src="../assets/images2019/Li_Zhen.png"/>
+                  <div class="speaker-name">李缜</div>
+                  <div class="speaker-title">国轩高科董事长</div>
+                </div>
+                <div class="col-6 center-txt speaker-item">
+                  <img class="speaker-img"  src="../assets/images2019/Zhou_Wei.png"/>
+                  <div class="speaker-name">周炜</div>
+                  <div class="speaker-title">创世伙伴资本(CCV) 创始主管合伙人，原KPCB中国基金主管合伙人</div>
+                </div>
+                <div class="col-6 center-txt speaker-item">
+                  <img class="speaker-img"  src="../assets/images2019/Bill_Huang.jpg"/>
+                  <div class="speaker-name">黄晓庆</div>
+                  <div class="speaker-title">达闼科技创始人兼CEO<br>华中科技大学电子信息与通信学院院长</div>
+                </div>
+                <div class="col-6 center-txt speaker-item">
+                  <img class="speaker-img"  src="../assets/images2019/Wang_Jinlin.png"/>
+                  <div class="speaker-name">王金林</div>
+                  <div class="speaker-title">清源创投管理合伙人</div>
+                </div>
+                <div class="col-6 center-txt speaker-item">
+                  <img class="speaker-img"  src="../assets/images2019/Chen_Yijia.jpg"/>
+                  <div class="speaker-name">陈一佳</div>
+                  <div class="speaker-title">著名双语主持人，财经专栏作家<br>三橙传媒创始人和CEO</div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. International Relations -->
+        <div class="row">
+          <div class="col panel-title center-txt">
+            国际关系
+          </div>
+        </div>
+        <div class="row panel-row" id="sixth-panel">
+          <div class="col-12 col-md-6">
+            <div class="row">
+              <div class="col speakers-header">
+                嘉宾
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6 center-txt speaker-item">
+                <img class="speaker-img"  src="../assets/images2019/Yan_Xuetong.jpg"/>
+                <div class="speaker-name">阎学通</div>
+                <div class="speaker-title">清华大学当代国际关系研究院院长 </div>
+              </div>
+              <div class="col-6 center-txt speaker-item">
+                <img class="speaker-img"  src="../assets/images2019/Sun_Zhe.jpg"/>
+                <div class="speaker-name">孙哲</div>
+                <div class="speaker-title">哥伦比亚大学中国项目联席主任</div>
+              </div>
+
+              <div class="col-6 center-txt speaker-item">
+                <img class="speaker-img"  src="../assets/images2019/Avery_Goldstein.png"/>
+                <div class="speaker-name">金骏远</div>
+                <div class="speaker-title">宾大当代中国研究中心主任</div>
+              </div>
+              <div class="col-6 center-txt speaker-item">
+                <img class="speaker-img"  src="../assets/images2019/Yang_Rui.jpg"/>
+                <div class="speaker-name">杨锐</div>
+                <div class="speaker-title">央视英文频道主持人 <br> “对话”栏目节目主持人</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="row">
+              <div class="col">
+                <div class="speakers-header">
+                  板块介绍:
+                </div>
+              </div>
+            </div>
+            <div class="row panel-desc">
+              <div class="col">
+                <p>
+                  在当前的世界规范秩序，中国和美国都是有重要世界影响的国家。
+                  随着中国影响力的逐渐壮大，双方保持良好合作关系对两国和世界有利。
+                  中美能否携手共进、勇于承担国际责任是未来数十年国际社会繁荣与稳定的关键。
+                  本论坛以中美贸易关系、一带一路、大国合作等为主线，着重讨论在当今的世界秩序中，中国和美国在国际层面的角色又会有何相应的改变？
+                  中美又如何在纷繁复杂的国际事务中在互惠互利基础上拓展合作，进而形成和而不同、利益共享的模式？
+                </p>
+                <p class="time-location"> <i class="icofont icofont-location-pin"></i> &nbsp; Irvine Auditorium</p>
+                <p class="time-location"> <i class="icofont icofont-calendar"></i> &nbsp; 4月20日, 1:00pm - 3:00pm</p>
+                <p class="time-location"><i class="icofont icofont-globe"></i> &nbsp; 语言: 英语</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+    
+
+    <!--
+      MARK: Page End
+    *******************
+    -->
+
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="../js/global.js"></script>
+    <script src="../js/home.js"></script>
+    <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoidG9teiIsImEiOiJjajJyN3dyenkwMDVqMndzN3Y0cjk0bTRmIn0.FEEGdubneAr17N9f8ZHh5g';
+    var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/dark-v9',
+    center: [-75.1982673, 39.9529105],
+    zoom: 9
+    });
+    $('.carousel').carousel();
+    </script>
+  </body>
+</html>
